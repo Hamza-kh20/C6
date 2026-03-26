@@ -1,0 +1,37 @@
+# Git Undo - restore vs reset
+
+## git restore
+Annule les modifications dans le working directory (fichiers non commités).
+
+### Utilisation :
+\`\`\`bash
+# Annule les modifications d'un fichier spécifique
+git restore <fichier>
+
+# Annule toutes les modifications
+git restore .
+\`\`\`
+
+### Exemple concret :
+1. Modifier un fichier déjà suivi par Git
+2. \`git status\` montre le fichier comme modifié
+3. \`git restore fichier.txt\` annule les modifications
+4. Le fichier revient à l'état du dernier commit
+
+## git reset
+Annule les commits ou désindexe des fichiers.
+
+### git reset --soft HEAD~1
+- Annule le dernier commit
+- Garde les fichiers dans la staging area
+
+### git reset HEAD <fichier>
+- Désindexe un fichier (le retire de la staging area)
+- Garde les modifications dans le working directory
+
+## Différence clé
+- **git restore** : agit sur le working directory (modifications non commitées)
+- **git reset** : agit sur l'historique (commits) et la staging area
+
+## À retenir
+git restore est plus sûr pour annuler des modifications non commitées !"
